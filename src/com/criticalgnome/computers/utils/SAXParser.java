@@ -1,7 +1,7 @@
 package com.criticalgnome.computers.utils;
 
-public abstract class Parser {
+public class SAXParser {
 	public static void parse() {
-
+		System.out.println("Not realized");
 	}
 }
