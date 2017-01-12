@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device>
+<device xs:noNamespaceSchemaLocation="Device.xsd">
 	<name>Gigabyte GeForce GTX 970 WindForce 3 OC 4GB</name>
 	<origin>Taiwan</origin>
 	<price>0</price>
