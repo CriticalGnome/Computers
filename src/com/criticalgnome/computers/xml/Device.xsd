@@ -1,0 +1,26 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="device" type="deviceType"/>
+  <xs:complexType name="deviceType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="origin"/>
+      <xs:element type="xs:byte" name="price"/>
+      <xs:element type="typeType" name="type"/>
+      <xs:element type="xs:string" name="critical"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="typeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="group"/>
+      <xs:element type="xs:string" name="peripheral"/>
+      <xs:element type="xs:string" name="has-cooler"/>
+      <xs:element type="xs:short" name="energy-consumption"/>
+      <xs:element type="port-listType" name="port-list"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="port-listType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="port" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
