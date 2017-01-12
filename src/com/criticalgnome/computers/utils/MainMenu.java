@@ -1,6 +1,4 @@
-package com.criticalgnome.computers.xml;
-
-import com.criticalgnome.computers.utils.Constants;
+package com.criticalgnome.computers.utils;
 
 public class MainMenu {
 
