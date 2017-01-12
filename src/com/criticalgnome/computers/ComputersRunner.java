@@ -2,6 +2,8 @@ package com.criticalgnome.computers;
 
 import java.awt.Toolkit;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import com.criticalgnome.computers.utils.Constants;
 import com.criticalgnome.computers.utils.DOMParser;
 import com.criticalgnome.computers.utils.Keyboard;
@@ -15,8 +17,10 @@ public class ComputersRunner {
 	 * 
 	 * @param args
 	 *            String[]:Command line arguments
+	 * @throws Exception
+	 * @throws ParserConfigurationException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		while (true) {
 			MainMenu.printMainMenu();
 			switch (Keyboard.inputNumber()) {
