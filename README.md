@@ -1,3 +1,3 @@
 # Computers
 
-Eclipse Project
+Eclipse Java Project
