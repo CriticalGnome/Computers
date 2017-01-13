@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device noNamespaceSchemaLocation="Device.xsd">
-	<name>Gigabyte GeForce GTX 970 WindForce 3 OC 4GB</name>
-	<origin>Taiwan</origin>
-	<price>320</price>
-	<type>
-		<group>InputOutput</group>
-		<peripheral>true</peripheral>
-		<has-cooler>true</has-cooler>
-		<energy-consumption>145</energy-consumption>
-		<port-list>
-			<port>HDMI</port>
-			<port>DVI1</port>
-			<port>DVI2</port>
-			<port>DisplayPort1</port>
-			<port>DisplayPort2</port>
-			<port>DisplayPort3</port>
-		</port-list>
-	</type>
-	<critical>true</critical>
-</device>
+<catalog>
+    <device>
+        <name>Gigabyte GeForce GTX 970 WindForce 3 OC 4GB</name>
+        <origin>Taiwan</origin>
+        <price>320</price>
+        <type>
+            <group>InputOutput</group>
+            <peripheral>true</peripheral>
+            <has-cooler>true</has-cooler>
+            <energy-consumption>145</energy-consumption>
+            <port-list>
+                <port>HDMI</port>
+            </port-list>
+        </type>
+        <critical>true</critical>
+    </device>
+    <device>
+        <name>nVidia Riva TNT 16MB</name>
+        <origin>China</origin>
+        <price>10</price>
+        <type>
+            <group>InputOutput</group>
+            <peripheral>true</peripheral>
+            <has-cooler>false</has-cooler>
+            <energy-consumption>20</energy-consumption>
+            <port-list>
+                <port>VGA</port>
+            </port-list>
+        </type>
+        <critical>true</critical>
+    </device>
+</catalog>
