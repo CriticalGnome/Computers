@@ -12,6 +12,10 @@ import com.criticalgnome.computers.utils.Parser;
 import com.criticalgnome.computers.utils.SAXParser;
 import com.criticalgnome.computers.utils.StAXParser;
 
+/**
+ * @author CriticalGnome
+ *
+ */
 public class ComputersRunner {
 	/**
 	 * Main method. Entry point.
