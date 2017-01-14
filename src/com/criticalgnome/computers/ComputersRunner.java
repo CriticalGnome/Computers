@@ -5,8 +5,10 @@ import java.awt.Toolkit;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.criticalgnome.computers.utils.Constants;
+import com.criticalgnome.computers.utils.DOMParser;
 import com.criticalgnome.computers.utils.Keyboard;
 import com.criticalgnome.computers.utils.MainMenu;
+import com.criticalgnome.computers.utils.Parser;
 import com.criticalgnome.computers.utils.SAXParser;
 import com.criticalgnome.computers.utils.StAXParser;
 
@@ -24,7 +26,8 @@ public class ComputersRunner {
 			MainMenu.printMainMenu();
 			switch (Keyboard.inputNumber()) {
 			case Constants.DOM_PARSER_CASE:
-				// Parser.parse();
+				Parser parser = new DOMParser();
+				parser.parse();
 				break;
 			case Constants.SAX_PARSER_CASE:
 				SAXParser.parse();
