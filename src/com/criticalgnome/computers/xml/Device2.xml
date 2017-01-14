@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device>
+	<name>nVidia Riva TNT 16MB</name>
+	<origin>China</origin>
+	<price>10</price>
+	<type>
+		<group>InputOutput</group>
+		<peripheral>true</peripheral>
+		<has-cooler>false</has-cooler>
+		<energy-consumption>20</energy-consumption>
+		<port-list>
+ 			<port>VGA</port>
+ 		</port-list>
+ 	</type>
+ 	<critical>true</critical>
+ </device>
