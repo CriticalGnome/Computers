@@ -8,10 +8,10 @@ public class ParserFabric {
 			parser = new DOMParser();
 			break;
 		case Constants.SAX_PARSER_CASE:
-			parser = new SAXParser();
+			parser = new SAXParse();
 			break;
 		case Constants.STAX_PARSER_CASE:
-			parser = new SAXParser();
+			parser = new SAXParse();
 			break;
 		}
 		return parser;

@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 
 import com.criticalgnome.computers.beans.Device;
 
-public class SAXParser extends Parser {
+public class SAXParse extends Parser {
 	@Override
 	public Device parse(File inputFile) throws Exception {
 		super.parse(inputFile);
@@ -26,7 +26,7 @@ public class SAXParser extends Parser {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		return null; // Нужно возвращать Device Проверю push
+		
+		return null; // На экран-то выводит, но вот объект не создаёт/ // Сделать объект? // Надо :) в этом окне все сверху перетянуть вниз. Через CTRL-A
 		}
 }
