@@ -11,7 +11,7 @@ public class ParserFabric {
 			parser = new SAXParse();
 			break;
 		case Constants.STAX_PARSER_CASE:
-			parser = new SAXParse();
+			parser = new StAXParser();
 			break;
 		}
 		return parser;
