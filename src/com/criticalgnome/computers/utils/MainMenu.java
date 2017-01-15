@@ -1,7 +1,14 @@
 package com.criticalgnome.computers.utils;
 
+/**
+ * @author CriticalGnome
+ *
+ */
 public class MainMenu {
 
+	/**
+	 * Print main menu to console
+	 */
 	public static void printMainMenu() {
 		System.out.println(Constants.THIСK_LINE);
 		System.out.println("1. DOM-парсер (Сергей Калиновский)");

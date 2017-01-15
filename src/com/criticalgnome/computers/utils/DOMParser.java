@@ -23,6 +23,11 @@ import com.criticalgnome.computers.beans.Type;;
  */
 public class DOMParser extends Parser {
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.criticalgnome.computers.utils.Parser#parse(java.io.File)
+	 */
 	@Override
 	public Device parse(File inputFile) throws Exception {
 		super.parse(inputFile);

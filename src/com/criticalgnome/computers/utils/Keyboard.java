@@ -3,6 +3,10 @@ package com.criticalgnome.computers.utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * @author CriticalGnome
+ *
+ */
 public class Keyboard {
 
 	public static Scanner in = new Scanner(System.in);

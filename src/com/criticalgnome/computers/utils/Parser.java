@@ -9,6 +9,11 @@ import com.criticalgnome.computers.beans.Device;
  *
  */
 public abstract class Parser {
+	/**
+	 * @param inputFile
+	 * @return
+	 * @throws Exception
+	 */
 	public Device parse(File inputFile) throws Exception {
 		return null;
 
