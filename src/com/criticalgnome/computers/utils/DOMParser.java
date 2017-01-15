@@ -70,11 +70,11 @@ public class DOMParser extends Parser {
 				critical = false;
 			}
 
-			Type type1 = new Type.Builder().group(group).peripheral(peripheral).hasCooler(hasCooler)
+			Type type = new Type.Builder().group(group).peripheral(peripheral).hasCooler(hasCooler)
 					.energyConsumption(energyConsumption).ports(ports).build();
-			Device device1 = new Device.Builder().name(name).origin(origin).price(price).type(type1).critical(critical)
+			Device device = new Device.Builder().name(name).origin(origin).price(price).type(type).critical(critical)
 					.build();
-			return device1;
+			return device;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
