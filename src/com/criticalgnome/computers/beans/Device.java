@@ -11,9 +11,54 @@ public class Device {
 	private Type type;
 	private boolean critical;
 
+	public static class Builder {
+		private String name;
+		private String origin;
+		private int price;
+		private Type type;
+		private boolean critical;
+
+		public Builder name(String name) {
+			this.name = name;
+			return this;
+		}
+
+		public Builder origin(String origin) {
+			this.origin = origin;
+			return this;
+		}
+
+		public Builder price(int price) {
+			this.price = price;
+			return this;
+		}
+
+		public Builder type(Type type) {
+			this.type = type;
+			return this;
+		}
+
+		public Builder critical(boolean critical) {
+			this.critical = critical;
+			return this;
+		}
+
+		public Device build() {
+			return new Device(this);
+		}
+	}
+
+	private Device(Builder builder) {
+		name = builder.name;
+		origin = builder.origin;
+		price = builder.price;
+		type = builder.type;
+		critical = builder.critical;
+	}
+
 	/**
 	 * Device constructor
-	 * 
+	 *
 	 * @param name
 	 *            String:Device name
 	 * @param origin

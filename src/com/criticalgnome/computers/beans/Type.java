@@ -13,9 +13,55 @@ public class Type {
 	private int energyConsumption;
 	private List<Port> ports;
 
+	public static class Builder {
+		private Group group;
+		private boolean peripheral;
+		private boolean hasCooler;
+		private int energyConsumption;
+		private List<Port> ports;
+
+		public Builder group(Group group) {
+			this.group = group;
+			return this;
+		}
+
+		public Builder peripheral(boolean peripheral) {
+			this.peripheral = peripheral;
+			return this;
+		}
+
+		public Builder hasCooler(boolean hasCooler) {
+			this.hasCooler = hasCooler;
+			return this;
+		}
+
+		public Builder energyConsumption(int energyConsumption) {
+			this.energyConsumption = energyConsumption;
+			return this;
+		}
+
+		public Builder ports(List<Port> ports) {
+			this.ports = ports;
+			return this;
+		}
+
+		public Type build() {
+			return new Type(this);
+		}
+
+	}
+
+	private Type(Builder builder) {
+		group = builder.group;
+		peripheral = builder.peripheral;
+		hasCooler = builder.hasCooler;
+		energyConsumption = builder.energyConsumption;
+		ports = builder.ports;
+	}
+
 	/**
 	 * Type constructor
-	 * 
+	 *
 	 * @param group
 	 *            Group:Group of device
 	 * @param peripheral

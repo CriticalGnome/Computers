@@ -1,6 +1,8 @@
 package com.criticalgnome.computers.utils;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -9,6 +11,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import com.criticalgnome.computers.beans.Device;
+import com.criticalgnome.computers.beans.Group;
+import com.criticalgnome.computers.beans.Port;
+import com.criticalgnome.computers.beans.Type;;
 
 /**
  * @author CriticalGnome
@@ -27,27 +34,43 @@ public class DOMParser extends Parser {
 			doc.getDocumentElement().normalize();
 			Node nNode = doc.getFirstChild();
 			Element eElement = (Element) nNode;
-			System.out.println("Name:\t\t\t" + eElement.getElementsByTagName("name").item(0).getTextContent());
-			System.out.println("Origin:\t\t\t" + eElement.getElementsByTagName("origin").item(0).getTextContent());
-			System.out.println("Price:\t\t\t" + eElement.getElementsByTagName("price").item(0).getTextContent());
-			System.out.println("Group:\t\t\t" + eElement.getElementsByTagName("group").item(0).getTextContent());
-			System.out
-					.println("Peripheral:\t\t" + eElement.getElementsByTagName("peripheral").item(0).getTextContent());
-			System.out
-					.println("Has Cooler:\t\t" + eElement.getElementsByTagName("has-cooler").item(0).getTextContent());
-			System.out.println("Energy Consumption:\t"
-					+ eElement.getElementsByTagName("energy-consumption").item(0).getTextContent());
+			String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+			String origin = eElement.getElementsByTagName("origin").item(0).getTextContent();
+			int price = Integer.parseInt(eElement.getElementsByTagName("price").item(0).getTextContent());
+			Group group = Group.valueOf(eElement.getElementsByTagName("group").item(0).getTextContent().toUpperCase());
+			boolean peripheral;
+			if (eElement.getElementsByTagName("peripheral").item(0).getTextContent() == "true") {
+				peripheral = true;
+			} else {
+				peripheral = false;
+			}
+			boolean hasCooler;
+			if (eElement.getElementsByTagName("has-cooler").item(0).getTextContent() == "true") {
+				hasCooler = true;
+			} else {
+				hasCooler = false;
+			}
+			int energyConsumption = Integer
+					.parseInt(eElement.getElementsByTagName("energy-consumption").item(0).getTextContent());
 			NodeList nList = doc.getElementsByTagName("port");
-			System.out.print("Ports(" + nList.getLength() + "):\t\t");
+			List<Port> ports = new ArrayList<Port>();
 			for (int i = 0; i < nList.getLength(); i++) {
 				Element eElementPort = (Element) nList.item(i);
-				System.out.print(eElementPort.getTextContent());
-				if ((i + 1) < nList.getLength()) {
-					System.out.print(", ");
-				}
+				Port port = new Port(i, eElementPort.getTextContent());
+				ports.add(port);
 			}
-			System.out.println("");
-			System.out.println("Critical:\t\t" + eElement.getElementsByTagName("critical").item(0).getTextContent());
+			boolean critical;
+			if (eElement.getElementsByTagName("critical").item(0).getTextContent() == "true") {
+				critical = true;
+			} else {
+				critical = false;
+			}
+
+			Type type1 = new Type.Builder().group(group).peripheral(peripheral).hasCooler(hasCooler)
+					.energyConsumption(energyConsumption).ports(ports).build();
+			Device device1 = new Device.Builder().name(name).origin(origin).price(price).type(type1).critical(critical)
+					.build();
+			System.out.println(device1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
