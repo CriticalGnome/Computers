@@ -12,7 +12,6 @@ import com.criticalgnome.computers.utils.Keyboard;
 import com.criticalgnome.computers.utils.MainMenu;
 import com.criticalgnome.computers.utils.Parser;
 import com.criticalgnome.computers.utils.SAXParser;
-import com.criticalgnome.computers.utils.StAXParser;
 
 /**
  * @author CriticalGnome
@@ -33,15 +32,19 @@ public class ComputersRunner {
 			MainMenu.printMainMenu();
 			switch (Keyboard.inputNumber()) {
 			case Constants.DOM_PARSER_CASE:
-				Parser parser = new DOMParser();
-				Device device1 = parser.parse(inputFile);
+				Parser parser1 = new DOMParser();
+				Device device1 = parser1.parse(inputFile);
 				System.out.println(device1);
 				break;
 			case Constants.SAX_PARSER_CASE:
-				SAXParser.parse();
+				Parser parser2 = new SAXParser();
+				Device device2 = parser2.parse(inputFile);
+				System.out.println(device2);
 				break;
 			case Constants.STAX_PARSER_CASE:
-				StAXParser.parse();
+				Parser parser3 = new SAXParser();
+				Device device3 = parser3.parse(inputFile);
+				System.out.println(device3);
 				break;
 			case Constants.EXIT_CASE:
 				System.out.println(Constants.EXIT_MESSAGE);
