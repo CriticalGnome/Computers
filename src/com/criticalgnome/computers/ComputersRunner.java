@@ -26,7 +26,7 @@ public class ComputersRunner {
 	 * @throws ParserConfigurationException
 	 */
 	public static void main(String[] args) throws Exception {
-		File inputFile = new File("bin/com/criticalgnome/computers/xml/Device.xml");
+		File inputFile = new File(Constants.XML_FILE);
 		while (true) {
 			MainMenu.printMainMenu();
 			int inputNumber = Keyboard.inputNumber();

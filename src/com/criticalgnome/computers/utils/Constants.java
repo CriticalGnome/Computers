@@ -16,4 +16,5 @@ public class Constants {
 	public static final String EXIT_MESSAGE = "Работа завершена...";
 	public static final int MIN_KEYBOARD_INPUT_RANGE = 0;
 	public static final int MAX_KEYBOARD_INPUT_RANGE = 4;
+	public static final String XML_FILE = "bin/com/criticalgnome/computers/xml/Device.xml";
 }
