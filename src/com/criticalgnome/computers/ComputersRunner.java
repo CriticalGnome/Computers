@@ -1,9 +1,11 @@
 package com.criticalgnome.computers;
 
 import java.awt.Toolkit;
+import java.io.File;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import com.criticalgnome.computers.beans.Device;
 import com.criticalgnome.computers.utils.Constants;
 import com.criticalgnome.computers.utils.DOMParser;
 import com.criticalgnome.computers.utils.Keyboard;
@@ -26,12 +28,14 @@ public class ComputersRunner {
 	 * @throws ParserConfigurationException
 	 */
 	public static void main(String[] args) throws Exception {
+		File inputFile = new File("bin/com/criticalgnome/computers/xml/Device.xml");
 		while (true) {
 			MainMenu.printMainMenu();
 			switch (Keyboard.inputNumber()) {
 			case Constants.DOM_PARSER_CASE:
 				Parser parser = new DOMParser();
-				parser.parse();
+				Device device1 = parser.parse(inputFile);
+				System.out.println(device1);
 				break;
 			case Constants.SAX_PARSER_CASE:
 				SAXParser.parse();

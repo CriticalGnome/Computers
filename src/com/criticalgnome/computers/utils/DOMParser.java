@@ -24,10 +24,9 @@ import com.criticalgnome.computers.beans.Type;;
 public class DOMParser extends Parser {
 
 	@Override
-	public void parse() throws Exception {
-		super.parse();
+	public Device parse(File inputFile) throws Exception {
+		super.parse(inputFile);
 		try {
-			File inputFile = new File("bin/com/criticalgnome/computers/xml/Device.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(inputFile);
@@ -70,9 +69,10 @@ public class DOMParser extends Parser {
 					.energyConsumption(energyConsumption).ports(ports).build();
 			Device device1 = new Device.Builder().name(name).origin(origin).price(price).type(type1).critical(critical)
 					.build();
-			System.out.println(device1);
+			return device1;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 }
