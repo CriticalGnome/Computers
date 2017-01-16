@@ -30,7 +30,7 @@ public class StAXParser extends Parser implements XMLStreamConstants {
 	
 	public Device parse(File inputFile) {
 		
-		StAXParser2 handler = new StAXParser2();
+		StAXParser handler = new StAXParser();
 		try {
 			FileInputStream inStream = new FileInputStream(inputFile);
 			XMLStreamReader xmlReader =
