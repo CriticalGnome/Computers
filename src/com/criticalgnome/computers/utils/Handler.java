@@ -34,12 +34,12 @@ public class Handler extends DefaultHandler {
 
 	@Override
 	public void startDocument() throws SAXException {
-		System.out.println("Start parsing... ");
+		
 	}
 
 	@Override
 	public void endDocument() throws SAXException {
-		System.out.println("end parsing... ");
+		
 	}
 
 	@Override
