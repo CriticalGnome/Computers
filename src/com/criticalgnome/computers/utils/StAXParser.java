@@ -1,15 +1,14 @@
 package com.criticalgnome.computers.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.util.ArrayList;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-
+import javax.xml.stream.*;
 import com.criticalgnome.computers.beans.*;
+
+/**
+ * @author Kos Klimov
+ *
+ */
 
 public class StAXParser extends Parser implements XMLStreamConstants {
 	
