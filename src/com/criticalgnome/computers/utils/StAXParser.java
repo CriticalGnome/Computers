@@ -11,7 +11,7 @@ import javax.xml.stream.XMLStreamReader;
 
 import com.criticalgnome.computers.beans.*;
 
-public class StAXParser2 extends Parser implements XMLStreamConstants {
+public class StAXParser extends Parser implements XMLStreamConstants {
 	
 	private static Device result;
 	private String name;
