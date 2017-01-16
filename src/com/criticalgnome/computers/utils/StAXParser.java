@@ -50,6 +50,8 @@ public class StAXParser extends Parser implements XMLStreamConstants {
 				}
 			}
 			xmlReader.close();
+		} catch (XMLStreamException e) {
+			System.out.println("XML stream error");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
