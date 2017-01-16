@@ -27,7 +27,6 @@ public class StAXParser2 extends Parser implements XMLStreamConstants {
 	int id;
 	
 	boolean inName, inOrigin, inPrice, inCritical, inType, inGroup, inPeripheral, inHasCooler, inEnergyConsumption, inPorts;
-	ArrayList <Device> list = new ArrayList<>();
 	
 	public Device parse(File inputFile) {
 		
@@ -143,8 +142,6 @@ public class StAXParser2 extends Parser implements XMLStreamConstants {
 		case "type":
 			type = new Type.Builder().group(group).peripheral(peripheral).hasCooler(hasCooler)
 			.energyConsumption(energyConsumption).ports(ports).build();
-			break;
-		case "port-list":
 			break;
 		}
 	}
