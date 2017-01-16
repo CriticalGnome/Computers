@@ -8,7 +8,7 @@ public class ParserFabric {
 			parser = new DOMParser();
 			break;
 		case Constants.SAX_PARSER_CASE:
-			parser = new SAXParse();
+			parser = new SAXParserr();
 			break;
 		case Constants.STAX_PARSER_CASE:
 			parser = new StAXParser();
