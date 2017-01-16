@@ -88,7 +88,7 @@ public class StAXParser extends Parser implements XMLStreamConstants {
 		case "has-cooler":
 			inHasCooler = true;
 			break;
-		case "energyConsumption":
+		case "energy-consumption":
 			inEnergyConsumption = true;
 			break;
 		case "port-list":
@@ -133,9 +133,9 @@ public class StAXParser extends Parser implements XMLStreamConstants {
 		}
 	}
 
-	private void finishElement(String name) {
+	private void finishElement(String elementName) {
 
-		switch (name) {
+		switch (elementName) {
 		case "device":
 			result = new Device.Builder().name(name).origin(origin).price(price).type(type).critical(critical)
 			.build();
