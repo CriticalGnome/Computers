@@ -65,7 +65,6 @@ public class DOMParser extends Parser {
 			}
 			boolean critical;
 			if (eElement.getElementsByTagName("critical").item(0).getTextContent().equals("true")) {
-				System.out.println("Critical");
 				critical = true;
 			} else {
 				critical = false;
