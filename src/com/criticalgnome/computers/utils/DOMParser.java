@@ -43,13 +43,13 @@ public class DOMParser extends Parser {
 			int price = Integer.parseInt(eElement.getElementsByTagName("price").item(0).getTextContent());
 			Group group = Group.valueOf(eElement.getElementsByTagName("group").item(0).getTextContent().toUpperCase());
 			boolean peripheral;
-			if (eElement.getElementsByTagName("peripheral").item(0).getTextContent() == "true") {
+			if (eElement.getElementsByTagName("peripheral").item(0).getTextContent().equals("true")) {
 				peripheral = true;
 			} else {
 				peripheral = false;
 			}
 			boolean hasCooler;
-			if (eElement.getElementsByTagName("has-cooler").item(0).getTextContent() == "true") {
+			if (eElement.getElementsByTagName("has-cooler").item(0).getTextContent().equals("true")) {
 				hasCooler = true;
 			} else {
 				hasCooler = false;
@@ -64,7 +64,8 @@ public class DOMParser extends Parser {
 				ports.add(port);
 			}
 			boolean critical;
-			if (eElement.getElementsByTagName("critical").item(0).getTextContent() == "true") {
+			if (eElement.getElementsByTagName("critical").item(0).getTextContent().equals("true")) {
+				System.out.println("Critical");
 				critical = true;
 			} else {
 				critical = false;

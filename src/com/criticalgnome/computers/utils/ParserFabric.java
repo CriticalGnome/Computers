@@ -13,6 +13,12 @@ public class ParserFabric {
 		case Constants.STAX_PARSER_CASE:
 			parser = new StAXParser();
 			break;
+		case 4:
+			parser = new CG_SAXParser();
+			break;
+		case 5:
+			parser = new CG_StAXParser();
+			break;
 		}
 		return parser;
 	}
